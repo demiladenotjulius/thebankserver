@@ -6,18 +6,18 @@ const ConnectToDB = require('./Database/database')
 
 require('dotenv').config()
 
-
 const port = process.env.PORT
 
-
-app.use(cors({
-    origin: 'http://localhost:5173',
-    credentials: true
-}))
 
 app.get('/', (req, res) =>{
     res.json({success: true, message: 'backend working'})
 })
+
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://bank-client-two.vercel.app'],
+    credentials: true
+}))
+
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
