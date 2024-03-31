@@ -15,7 +15,9 @@ app.use(cors({
     credentials: true
 }))
 
-
+app.get('/', (req, res) =>{
+    res.json({success: true, message: 'backend working'})
+})
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
