@@ -30,15 +30,15 @@ userRouter.post('/user-login', loginUser);
 userRouter.post('/upload', uploadFile.single('image'), async (req, res) => {
     try {
         const newUpload = await Upload.create({
-            Image: req.file.filename,
-            Caption: req.body.caption // Extract caption from request body
+            image: req.file.filename,
+            caption: req.body.caption 
 
         });
 
         res.status(201).json({ message: 'Upload created successfully', upload: newUpload });
     } catch (error) {
         console.error('Error uploading file:', error);
-        res.status(500).json({ error: 'Internal server error' });
+        // res.status(500).json({ error: 'Internal server error' });
     }
 });
 

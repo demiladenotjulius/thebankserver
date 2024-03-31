@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 
 const uploadSchema = new mongoose.Schema({
 
-    Image: {
+    image: {
         type: String,
         required: true,
         
     },
-    Caption: {
+    caption: {
         type: String,
         required: true,
     }
