@@ -17,10 +17,7 @@ app.get('/', (req, res) =>{
 
 
 
-app.use(cors({
-    origin: ['http://localhost:5173', 'https://bank-client-two.vercel.app'],
-    credentials: true
-}))
+app.use(cors())
 
 
 app.use(express.urlencoded({extended: true}))
