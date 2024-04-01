@@ -17,15 +17,17 @@ app.get('/', (req, res) =>{
 
 
 
-app.use(cors())
+const allowedOrigins = ['http://localhost:5173', 'https://bank-client-two.vercel.app'];
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true 
+}));
 
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(userRouter)
 app.use(express.static('public'));
-
-
 
 
 app.listen(port, ()=> {
