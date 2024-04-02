@@ -9,8 +9,6 @@ require('dotenv').config()
 const port = process.env.PORT
 
 
-
-
 app.get('/', (req, res) =>{
     res.json({success: true, message: 'backend working'})
 })
@@ -24,10 +22,13 @@ app.use(cors({
 }));
 
 
+
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(userRouter)
 app.use(express.static('public'));
+
+
 
 
 app.listen(port, ()=> {
